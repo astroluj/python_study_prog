@@ -1,4 +1,4 @@
-#-*- encoding: utf-8 -*-
+#-*- coding: utf-8 -*-
 '''
 == Book Admin
 [국민대학교]20093326_이의재
