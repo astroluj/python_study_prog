@@ -20,18 +20,30 @@ class Example(tk.Frame):
 
     def callback(self, entry, event):
         # Operator Case
-        if event == 'Cls':
-            entry.delete(0, tk.END)
-        elif event =='Back':
-            entry.delete(len(entry.get()) - 1)
-        elif event == '=':
-            ans = eval(entry.get())
-            entry.delete(0, tk.END)
-            entry.insert(0, ans)
-        elif event == 'Close':
-            self.parent.destroy()
-        else:
-            entry.insert(tk.END, event)
+        if event == 'search':
+            result = Books.search_info(table = 'Books',
+                                       name, author, price = entry.get().split(','))
+            entry.delete(len(entry.get())
+            entry.insert(0, result)
+                                
+        elif event =='insert':
+            result = Books.insert_info(table = 'Books',
+                                       name, author, price = entry.get().split(','))
+            entry.delete(len(entry.get()))
+            entry.insert(0, 'Success' if result
+                         else 'Failed')
+        elif event == 'modify':
+            result = Books.update_info(table = 'Books',
+                                       name, author, price = entry.get().split(','))
+            entry.delete(len(entry.get()))
+            entry.insert(0, 'Success' if result
+                         else 'Failed')
+        else: # delete
+            result = Books.update_info(table = 'Books',
+                                       name, author, price = entry.get().split(','))
+            entry.delete(len(entry.get()))
+            entry.insert(0, 'Success' if result
+                         else 'Failed')
 
         
     def initUI(self):
@@ -42,51 +54,40 @@ class Example(tk.Frame):
         self.style.theme_use("default")
 
         # row x col
-        self.columnconfigure(0, pad=3)
-        self.columnconfigure(1, pad=3)
-        self.columnconfigure(2, pad=3)
-        self.columnconfigure(3, pad=3)
-
-        self.rowconfigure(0, pad=3)
-        self.rowconfigure(1, pad=3)
-        self.rowconfigure(2, pad=3)
-        self.rowconfigure(3, pad=3)
-        self.rowconfigure(4, pad=3)
+        for i in range(3):
+            self.columnconfigure(i, pad=2)
+        for i in range(4):
+            self.rowconfigure(i, pad=2)
 
         # pad set
         entry = ttk.Entry(self)
         
-        text = ttk.Text(self,
-                        text = 'Name')
-        text.grid(row = 0,
-                 column = 1)
-        text = ttk.Text(self,
-                        text = 'Author')
-        text.grid(row = 0,
-                 column = 1)
-        text = ttk.Text(self,
-                        text = 'Price')
-        text.grid(row = 0,
-                 column = 1)
-                 
-        entry.grid(row=0, column=4, sticky=tk.W + tk.E)
-        entry.insert(0, '')
-        entry.inser(1, '')
-
-        text = [['', 'Back', ' ', 'Close'],
-                ['7', '8', '9', '/'],
-                ['4', '5', '6', '*'],
-                ['1', '2', '3', '-'],
-                ['0', '.', '=', '+']]
+        # Label
+        text = ['Name', 'Author', 'Price']
         # event register
-        for row, i in enumerate(text, start = 1):
-            for col, j in enumerate(i, start = 1):
-                btn = ttk.Button(self,
-                               text = j,
-                               command = (lambda text = j: self.callback(entry, text)))
-                btn.grid(row = row,
-                         column = col)
+        for col, i in enumerate(text, start = 1):
+            txt = ttk.Label(self,
+                           text = i))
+            btn.grid(row = 0,
+                     column = col)
+        # insert
+        entry.grid(row=1, column=3, sticky=tk.W + tk.E)
+        entry.insert(0,1, '') # name input
+        entry.insert(0,2, '') # author input
+        entry.insert(0,3, '') # price input
 
+        text = ['search', 'insert', 'modify', 'update']
+        # event register
+        for col, i in enumerate(text, start = 1):
+            btn = ttk.Button(self,
+                            text = i,
+                            command = (lambda text = i: self.callback(entry, text)))
+            btn.grid(row = 2,
+                     column = col)
+        # show data
+        entry.grid(row=3, columnspans=3, sticky=tk.W + tk.E)
+        entry.insert(3, '')
+        
         # package
         self.pack()
 
