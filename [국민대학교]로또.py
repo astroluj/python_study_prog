@@ -11,19 +11,19 @@ class PeaceLotto:
 
     def __init__(self, date):
         self.__date = date
-        self.__MIN = 1
-        self.__MAX = 45
-        self.__SIZE = 6
+        self.__min = 1
+        self.__max = 45
+        self.__size = 6
         # 중복 방지 집합사용
-        self.__number = set([])
+        self.__number = set()
         
     def get_lotto_number(self):
         print('{0} 현재 추천 로또 번호.'.format(self.__date))
         while True:
-            if len(self.__number) == self.__SIZE:
+            if len(self.__number) == self.__size:
                 return self.__number
             
-            self.__number.add(random.randrange(self.__MAX) + 1)
+            self.__number.add(random.randrange(self.__max) + 1)
         
 
 
