@@ -1,0 +1,76 @@
+무선네트워크 - 보안이슈
+
+---------------------------------------------------------------
+
+교과활동
+--------
+1. study and presentation (2회) : 개별1회, 팀별1회 진행 
+	(발표)      2회
+        (제출물)    보고서 2건, 발표파일 2건
+
+2. programming/implimentation-demo : 개별1회
+        (발표/데모) 1회
+        (제출물)    보고서 1건, 발표파일 1건, 소스코드 1세트
+        
+3. R&D project proposal : 팀별1회
+	(발표)      1회
+        (제출물)    제안서 1건, 발표파일 1건
+
+----------------------------------------------------------------
+
+점수배정
+--------
+study and presentation : 40%
+programming/implimentation-demo : 20%
+R&D project proposal : 20%
+attendance(출석) : 20%
+
+----------------------------------------------------------------
+
+조사/발표 토픽
+--------------
+1. SSL(Secure Sockets Layer 4.5계층 :=Https://),
+   TLS(Transport Layer Security, RFC4346 :=표준화된 SSL)
+  1-1. SSL socket programming
+  1-2. OpenSSL, Apach-SSL open source
+
+2. IPsec(RFC4301, RFC6071 3계층 := 확장된 IP Security), VPN(Virtual Private Network := 가상 전용망)
+  2-1. AH(Authentication Header) protocol
+  2-2. ESP(Encapsulation Security Payload) protocol
+  2-3. SA(Security Association)
+  2-4. IKE(Internet Key Exchange) protocol, RFC5996)
+
+3. Securing Wireless LAN
+  3-1. WEP(Wired Equivalent Privacy) -> IEEE802.11 specification
+  3-2. IEEE 802.11i -> improved version of WEP
+  3-3. EAP(Extensible Authentication Protocol, RFC3748)
+  3-4. EAPoL(EAP over LAN, IEEE802.1X) -> EAP message encapsulation over wirelessw LAN
+  3-5. RADIUS(RFC 2865) -> EAP encapsulation over UDP/IP wired network, OpenRADIUS open source
+  3-6. EAP-TLS(RFC 5216) -> public=key based authentication method
+  3-7. mobile security over TPM HW-based security 
+        -> TNC specification, EAP-TNC, OpenTC(open source - jTSS, JSR321), TPM/J, IMC, IMV, Open/TC, TCcert
+  3-8. Privacy CA (PCA)
+  3-9. XKMS -> Key generation and management between TCcert and PCA
+  3-10. XUL 기반 GUI 모듈
+
+4. mobile security
+  4-1. smart card and security
+  4-2. USIM and security(TPM)
+  4-3. JavaCard Operating System
+  4-4. UICC
+  4-5. SIM card protocol
+  
+5. Smart Phone
+  5-1. OpenIP over smart phones -> auto-configuration(IP자동 할당) of Ad-Hoc(Host간 Network 연결) Network
+  5-2. Bluetooth Network over smart phones
+  5-3. Bridge between Ad-Hoc Network and Bluetooth
+  5-4. Middleware Platform for Video Streamming
+
+6. SELinux(Android Linux 계열) of smart phone security enhancement
+
+7. Web security
+  7-1. OpenID(웹에서 하나의 아이디를 통하여 연결)
+  7-2. OAuth
+  7-3. Integrated Login Access Control
+  7-4. SASL(RFC 2222) for Kerberos Authentication
+
