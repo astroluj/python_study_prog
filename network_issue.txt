@@ -11,6 +11,8 @@
 2. programming/implimentation-demo : 개별1회
         (발표/데모) 1회
         (제출물)    보고서 1건, 발표파일 1건, 소스코드 1세트
+        Example)
+        
         
 3. R&D project proposal : 팀별1회
 	(발표)      1회
